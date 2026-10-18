@@ -1,0 +1,38 @@
+/* Linked List Node
+struct Node {
+    int data;
+    struct Node *next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+}; */
+
+class Solution {
+  public:
+    Node* removeDuplicates(Node* head) {
+    
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    
+    Node* current = head;
+
+    while (current->next != NULL) {
+
+        if (current->data == current->next->data) {
+            Node* duplicateToDelete = current->next;
+
+            current->next = current->next->next;
+
+            delete duplicateToDelete; 
+        } else {
+
+            current = current->next;
+        }
+    }
+    
+    return head;
+}
+
+};
