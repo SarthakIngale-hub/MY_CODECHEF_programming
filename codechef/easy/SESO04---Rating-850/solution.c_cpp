@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    string str;
+    cin>>str;
+    char key;
+    cin>>key;
+    for(int i = 0;i < str.length();i++){
+        if(str[i] == key){
+            cout<<i;
+            return 0;
+        }
+    }
+    cout<<-1;
+}
